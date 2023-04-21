@@ -1,0 +1,32 @@
+class HelloWorld {
+    public static int countNoOfOnes(int arr[])
+    {
+        int low=0;
+        int high=arr.length-1;
+        int mid;
+        int x=1;
+        int left=-1;
+        while(low<=high)
+        {
+            mid=low+(high-low)/2;
+            if(arr[mid]==x)
+            {
+                left=mid;
+                high=mid-1;
+            }
+            else if(x<arr[mid])
+            {
+                high=mid-1;
+            }
+            else{
+                low=mid+1;
+            }
+        }
+        return arr.length-left;
+    }
+    public static void main(String[] args) {
+        int arr[]={0,0,0,0,1,1,1,1,1};
+        System.out.println(countNoOfOnes(arr));
+    }
+}
+      
