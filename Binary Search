@@ -1,0 +1,39 @@
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13};
+        int findNum = 8;
+
+        if (arr.length == 0) {
+            System.out.println("Array is empty");
+            return;
+        }
+
+        if (arr.length == 1) {
+            if (findNum == arr[0]) {
+                System.out.println(0);
+            } else {
+                System.out.println("Number not found");
+            }
+            return;
+        }
+
+        int low = 0;
+        int max = arr.length - 1;
+        int mid;
+
+        while (low <= max) {
+            mid = (low + max) / 2;
+
+            if (arr[mid] == findNum) {
+                System.out.println(mid);
+                return;
+            } else if (arr[mid] > findNum) {
+                max = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        System.out.println("Number not found");
+    }
+}
