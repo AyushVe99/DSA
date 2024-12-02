@@ -1,0 +1,27 @@
+class Main {
+    public static void main(String[] args) {
+        int arr[]={1,2,-1,4,-3,7,1,-6};
+        int k=4;
+        int sum=0;
+        int maxSum=Integer.MIN_VALUE;
+        int i=0;
+            for(int j=0;j<k;j++){
+            sum+=arr[j];
+        }
+        maxSum=sum;
+        
+        for(int j=k;j<arr.length;j++)
+        {
+            
+             sum=sum+arr[j]-arr[j-k];
+            
+            if(sum>maxSum)
+            {
+                maxSum=sum;
+            }
+            
+        }
+        System.out.println(maxSum);
+        
+    }
+}
