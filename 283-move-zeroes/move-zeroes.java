@@ -7,11 +7,9 @@ class Solution {
            if(nums[i]==0){
             count++;
            }
-        }
-        for(int i=0;i<n;i++){
-          if(nums[i]!=0){
+           else{
             nums[pos++]=nums[i];
-          }
+           }
         }
         for( int i=n-count;i<n;i++){
             nums[i]=0;
