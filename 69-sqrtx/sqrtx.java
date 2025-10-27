@@ -1,14 +1,20 @@
 class Solution {
     public int mySqrt(int x) {
-        if (x < 2) return x;
 
-        for (long i = 1; i * i <= x; i++) {
-            if (i * i == x) {
+        int sqrt = 0;
+        if(x<2){
+            return x;
+        }
+
+        for (long i = 0; i <= x; i++) {
+            long xdouble=x;
+            if (i * i == xdouble) {
                 return (int)i;
-            } else if ((i + 1) * (i + 1) > x) {
-                return (int)i;
+            } else if (i * i > xdouble) {
+                return (int)i - 1;
             }
         }
-        return 0; 
+        return 0;
+
     }
 }
